@@ -1,0 +1,20 @@
+.btn.red {
+    background-color: red;
+}
+
+.btn.yellow {
+    background-color: yellow
+}
+
+
+.btn.green {
+    background-color: green;
+}
+
+.btn.blue {
+    background-color: blue;
+}
+
+.simonbuttons {
+    width: 50%; 
+}

@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Simon</title>
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet"> 
+</head>
+<body>
+    <form class = "strictSelector">
+        <label>Strict Mode:</label>
+        <div class = "btn-group" data-toggle = "buttons">
+            <label id = "strictOff" class = "strictToggle btn active btn-primary">
+            <input class ="" type = "radio" checked>Off</input>
+            </label>
+        <label id = "strictOn" class = "strictToggle btn btn-primary">
+            <input class ="strictToggle" type = "radio">On</input>
+        </label>
+            
+        </div>
+    </form>
+    <div class = "simonButtons">
+    <button id = "red" class = "btn btn-lg btn-block gameButton red">
+        <audio id = "redSound"><source src = "audio/Red.wav"</audio></button>
+    <button id = "blue" class = "btn btn-lg btn-block gameButton blue">
+                <audio id = "blueSound"><source src = "audio/Blue.wav"</audio></button>
+        </button>
+    <button id = "green" class = "btn btn-lg btn-block gameButton green">
+                <audio id = "greenSound"><source src = "audio/Green.wav"</audio></button>
+            </button>
+    <button id = "yellow" class = "btn btn-lg btn-block gameButton yellow">
+                <audio id = "yellowSound"><source src = "audio/Yellow.wav"</audio></button>
+</button>
+<audio id = "whoops"><source src = "audio/Whoops.wav"</audio>
+<audio id = "gameOver"><source src = "audio/GameOver.wav"</audio>
+    </div>
+    <div class = "messageWindow"></div>
+<script src="js/index.js"></script>
+
+</body>
