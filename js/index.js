@@ -3,7 +3,8 @@ var intervalLength = 1000;
 var strictMode = false;
 var lastChance = false;
 var i
-
+var livesLeft
+var numberOfLives = 2
 
 //
 //$(".gameButton").on("click", function(){
@@ -58,52 +59,67 @@ $(".gameButton").on("click", function(){
         console.log(clicks);        
         var soundToPlay = "#" + clickedButton +"Sound";    
 
-        if (clickedButton !== colorOrder[clicks-1] && !strictMode){
-            $(".messageWindow").html("wrong");
-            if (strictMode || lastChance){
-                gameOver();}
-             else if (!strictMode && !lastChance) {
+        if (clickedButton !== colorOrder[clicks-1]){
+            $(".messageWindow").html("Incorrect!").fadeOut(2000);
+            livesLeft--;
+            if (livesLeft === 0){
+                return gameOver();    
+            } else {
                 soundToPlay = $('#whoops')    
                 showColorOrder();
                 clicks = 0;
-                lastChance = true;}
+                }
         }
             
          else if (clicks === (colorOrder.length)){
-            setTimeout(function(){
-                $(".gameButton").attr("disabled", true )
+            if (clicks === 20 && !infinityMode){
+                return youWin();
+            }
+             setTimeout(function(){
+                $(".gameButton").attr("disabled", true);
+                $(".steps").html(clicks)
                 computerTurn()}, 1000);
-        } 
+         
+         } 
             $(soundToPlay)[0].play();
             })   
 })
 
 
-
+function youWin(){
+    alert("You Win!")
+}
 
 function gameOver(){
     $("#gameOver")[0].play();
-    $.when(alert("Game Over!"))
+    $.when(alert("Game Over!")).then(playAgain(computerTurn))
+}
+
+function playAgain(callback){
+        clicks = 0; 
+        colorOrder = [];
+        livesLeft = numberOfLives
+//setTimeout(computerTurn(), 0)
+        callback();
 }
 
 
 $(".strictToggle").on("click", function(){
     if ($(this).attr("id")==="strictOn"){
-        strictMode = true;
+        numberOfLives = 1
     } else {
-        strictMode = false;
+        numberOfLives = 2;
     }
+    livesLeft = numberOfLives
 })
 
 function computerTurn(){
-
-
 clicks = 0     
 $.when(addRandomColor()).then(showColorOrder())
 }   
 
 $(document).on("ready", function(){
-                $(".gameButton").attr("disabled", true )
-
+    $(".gameButton").attr("disabled", true )
+    livesLeft = numberOfLives;
     computerTurn();
 });

@@ -16,5 +16,35 @@
 }
 
 .simonbuttons {
-    width: 50%; 
+    width: 50%;
+}
+
+.simonbuttons .btn {
+    height: 25%;
+    position: relative;
+}
+
+.btn.btn-lg::before, .btn.btn-lg:: after{
+    content: "";
+    position: absolute;
+    top: 5px; 
+    width: 5px;
+    height: 50px;
+}
+
+.btn.btn-lg::before {
+    left: -5px;
+}
+
+.btn.btn-lg::after {
+    right: -5px;
+}
+
+.btn.btn-lg {
+    display: inline-block;
+    position: relative;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 20px;
+    margin-left: 0.5em;
 }
