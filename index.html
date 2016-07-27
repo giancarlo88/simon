@@ -57,6 +57,7 @@
             </div>
         </div>
     </div>
+    <div class = "header">
     <div class="info">
         <div class="welcome">WELCOME TO SIMON!</div>
         <div class="number-of-stages">STEPS: <span class="steps">0</span></div>
@@ -64,6 +65,8 @@
         <div>HIGH SCORE: <span class="highScore">0</span></div>
         <div class="messageWindow">CAN YOU REACH 20?</div>
     </div>
+    </div>
+    <div class = "mid">
     <div class="simonButtons">
         <div class="first-row rows">
             <div id="red" class="button gameButton red">
@@ -84,6 +87,7 @@
                     <source src="audio/Yellow.wav" </audio> </div>
         </div>
     </div>
+            </div>
     <form class="strictSelector">
         <label data-toggle="tooltip" data-placement="bottom" title="One mistake and it's Game Over!">STRICT MODE</label>
         <div class="btn-group" data-toggle="buttons">
@@ -96,8 +100,10 @@
         </div>
     </form> <span class="btn reset">[RESET]</span>
     <audio id="whoops">
-        <source src="audio/Whoops.wav" </audio>
+        <source src="audio/Whoops.wav"</audio>
         <audio id="gameOver">
-            <source src="audio/GameOver.wav" </audio>
+            <source src="audio/GameOver.wav"> </audio>
+            <audio id = "win">
+            <source src = "audio/Win.wav"></audio>
             <script src="js/index.js"></script>
 </body>

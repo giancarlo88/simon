@@ -8,6 +8,7 @@ var numberOfLives = 2;
 var highScore = 0;
 var steps = 0;
 var infinityMode = false; //To be implemented later
+"use strict";
 $(document).on("ready", function () {
     livesLeft = numberOfLives;
     $(".lives").html(livesLeft);
@@ -67,14 +68,13 @@ $(".gameButton").on("click", function () {
                     highScore = steps;
                 }
                 return gameOver(showModal);
-            }
-            else {
+            } else {
                 soundToPlay = $('#whoops');
                 showColorOrder();
                 clicks = 0;
             }
         }
-        else if (clicks === (colorOrder.length)) { //User has keyed sequence correctly
+                else if (clicks === (colorOrder.length)) { //User has keyed sequence correctly
             if (clicks === 20 && !infinityMode) {
                 return youWin();
             }
@@ -90,6 +90,7 @@ $(".gameButton").on("click", function () {
 });
 
 function youWin() {
+    $("#win")[0].play();
     $("#youWinModal").modal("show");
 }
 
@@ -121,8 +122,7 @@ $(".strictToggle").on("click", function () {
     $(".yesReset").on("click", function () {
         if ($(this).attr("id") === "strictOn") {
             numberOfLives = 1;
-        }
-        else {
+        } else {
             numberOfLives = 2;
         }
         livesLeft = numberOfLives; //Updates the display to show the new number of lives.

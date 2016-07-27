@@ -1,204 +1,197 @@
 /* line 1, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 body {
   font-family: "Press Start 2p", sans-serif;
+  font-size: 14px;
   color: #FFF;
   background-color: #111;
   height: 100%;
   width: auto; }
 
-/* line 9, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 10, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .btn {
   border: 0px;
   border-radius: 0px;
   background-color: #111;
-  line-height: 1px; }
+  line-height: 1px;
+  font-size: 1em; }
 
-/* line 16, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 18, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .btn:hover {
   color: red; }
 
-/* line 20, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 22, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .btn.active {
   color: red; }
 
-/* line 24, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 26, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+.header {
+  display: flex;
+  align-items: flex-start; }
+
+/* line 31, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .info {
   margin-left: 1em;
   margin-bottom: 1em; }
 
-/* line 29, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 36, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+.mid {
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+
+/* line 42, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .modal {
   width: 50%;
   left: 25%;
   top: 25%; }
 
-/* line 35, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 48, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .modal-header {
   border-bottom: 0px;
   padding-bottom: 1em; }
 
-/* line 40, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 53, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .modal-content {
   background-color: #111;
   border-radius: 0px;
   text-align: center;
   border: 0; }
 
-/* line 47, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 60, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .reset {
   text-align: right; }
 
-/* line 51, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 64, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .rows {
   text-align: center;
-  height: 20%;
   margin: 1em 0 1em 0; }
 
-/* line 57, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 69, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .strictSelector {
   margin-top: 1.5em;
   margin-left: 1em; }
 
-/* line 62, /Users/gcgp88/Documents/Web/simon/css/style.scss */
-.simonbuttons .button {
-  height: 30%;
-  width: 30%;
-  position: relative;
-  cursor: pointer; }
-
-/* line 77, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 85, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.red {
   display: inline-block;
-  background: #f00;
   position: relative;
-  line-height: 60px;
-  text-align: center;
-  padding: 40px;
-  height: 110px;
-  margin: 10px; }
+  height: 15vh;
+  max-height: 200px;
+  margin: 10px;
+  width: 400px; }
+  /* line 95, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+  .button.red,
+  .button.red::before,
+  .button.red::after {
+    background-color: #f00; }
 
-/* line 87, /Users/gcgp88/Documents/Web/simon/css/style.scss */
-.button.red,
-.button.red::before,
-.button.red::after {
-  background-color: #f00; }
-
-/* line 90, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 98, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.red::before,
 .button.red::after {
   content: "";
   position: absolute;
-  height: 100px;
+  height: calc(100% - 10px);
   width: 15px;
   top: 5px; }
 
-/* line 97, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 106, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.red::before {
   left: -5px; }
 
-/* line 100, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 109, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.red::after {
   right: -5px; }
 
-/* line 77, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 85, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.yellow {
   display: inline-block;
-  background: #FFF30A;
   position: relative;
-  line-height: 60px;
-  text-align: center;
-  padding: 40px;
-  height: 110px;
-  margin: 10px; }
+  height: 15vh;
+  max-height: 200px;
+  margin: 10px;
+  width: 400px; }
+  /* line 95, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+  .button.yellow,
+  .button.yellow::before,
+  .button.yellow::after {
+    background-color: #FFF30A; }
 
-/* line 87, /Users/gcgp88/Documents/Web/simon/css/style.scss */
-.button.yellow,
-.button.yellow::before,
-.button.yellow::after {
-  background-color: #FFF30A; }
-
-/* line 90, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 98, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.yellow::before,
 .button.yellow::after {
   content: "";
   position: absolute;
-  height: 100px;
+  height: calc(100% - 10px);
   width: 15px;
   top: 5px; }
 
-/* line 97, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 106, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.yellow::before {
   left: -5px; }
 
-/* line 100, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 109, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.yellow::after {
   right: -5px; }
 
-/* line 77, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 85, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.green {
   display: inline-block;
-  background: #0DFF21;
   position: relative;
-  line-height: 60px;
-  text-align: center;
-  padding: 40px;
-  height: 110px;
-  margin: 10px; }
+  height: 15vh;
+  max-height: 200px;
+  margin: 10px;
+  width: 400px; }
+  /* line 95, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+  .button.green,
+  .button.green::before,
+  .button.green::after {
+    background-color: #0DFF21; }
 
-/* line 87, /Users/gcgp88/Documents/Web/simon/css/style.scss */
-.button.green,
-.button.green::before,
-.button.green::after {
-  background-color: #0DFF21; }
-
-/* line 90, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 98, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.green::before,
 .button.green::after {
   content: "";
   position: absolute;
-  height: 100px;
+  height: calc(100% - 10px);
   width: 15px;
   top: 5px; }
 
-/* line 97, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 106, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.green::before {
   left: -5px; }
 
-/* line 100, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 109, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.green::after {
   right: -5px; }
 
-/* line 77, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 85, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.blue {
   display: inline-block;
-  background: #1D48FF;
   position: relative;
-  line-height: 60px;
-  text-align: center;
-  padding: 40px;
-  height: 110px;
-  margin: 10px; }
+  height: 15vh;
+  max-height: 200px;
+  margin: 10px;
+  width: 400px; }
+  /* line 95, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+  .button.blue,
+  .button.blue::before,
+  .button.blue::after {
+    background-color: #1D48FF; }
 
-/* line 87, /Users/gcgp88/Documents/Web/simon/css/style.scss */
-.button.blue,
-.button.blue::before,
-.button.blue::after {
-  background-color: #1D48FF; }
-
-/* line 90, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 98, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.blue::before,
 .button.blue::after {
   content: "";
   position: absolute;
-  height: 100px;
+  height: calc(100% - 10px);
   width: 15px;
   top: 5px; }
 
-/* line 97, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 106, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.blue::before {
   left: -5px; }
 
-/* line 100, /Users/gcgp88/Documents/Web/simon/css/style.scss */
+/* line 109, /Users/gcgp88/Documents/Web/simon/css/style.scss */
 .button.blue::after {
   right: -5px; }
 
