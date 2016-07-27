@@ -1,0 +1,111 @@
+/*.button.red {
+    background-color: red;
+}
+
+.button.yellow {
+    background-color: yellow
+}
+
+
+.button.green {
+    background-color: green;
+}
+
+.button.blue {
+    background-color: blue;
+}
+
+.simonbuttons {
+    width: 100%;
+}
+
+.simonbuttons .button {
+    height: 10%;
+    width: 50%;
+    position: relative;
+}
+
+
+.button, .button::before, .button::after{
+    background-color: #f00;
+}
+
+.button::before, .button:: after{
+    content: "";
+    position: absolute;
+    top: 5px; 
+    width: 5px;
+    height: 50px;
+}
+
+.button::before {
+    left: -5px;
+}
+
+.button::after {
+    right: -5px;
+}
+
+.button {
+    display: inline-block;
+    position: relative;
+    background: #f00;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 20px;
+    margin-left: 0.5em;
+}
+*/
+$red: "red";
+$red-color: #f00;
+$yellow: "yellow";
+$yellow-color: #FFF30A;
+$green: "green";
+$green-color: #0DFF21;
+$blue: "blue";
+$blue-color: #1D48FF;
+
+/* main button block */
+
+@mixin button-options($color-name, $color){
+.button.#{$color-name} {
+    display:inline-block;
+    background: $color;
+    position: relative;
+    line-height: 60px;
+    text-align: center;
+    padding: 0 20px;
+    height: 60px;
+    margin-left: 0.5em;
+}
+
+/* common background color to all */
+.button.#{$color-name}, .button.#{$color-name}::before, .button.#{$color-name}::after {
+    background-color: $color;
+}
+
+/* shared styles to make left and right lines */
+.button.#{$color-name}::before, .button.#{$color-name}::after {
+    content: "";
+    position: absolute;
+    height: 50px;
+    width: 5px;
+    top: 5px;
+
+}
+
+/* pull the left 'line' out to the left */
+.button.#{$color-name}::before {
+    left: -5px;
+}
+
+/* pull the right 'line' out to the right */
+.button.#{$color-name}::after {    
+    right: -5px;
+}
+
+}
+@include button-options($red, $red-color);
+@include button-options($yellow, $yellow-color);
+@include button-options($green, $green-color);
+@include button-options($blue, $blue-color);

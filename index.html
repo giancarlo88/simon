@@ -2,41 +2,102 @@
     <meta charset="UTF-8">
     <title>Simon</title>
     <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link href='https://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css"> 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:600,900" rel="stylesheet"> 
-</head>
-<body>
-    <form class = "strictSelector">
-        <label>Strict Mode:</label>
-        <div class = "btn-group" data-toggle = "buttons">
-            <label id = "strictOff" class = "strictToggle btn active btn-primary">
-            <input class ="" type = "radio" checked>Off</input>
-            </label>
-        <label id = "strictOn" class = "strictToggle btn btn-primary">
-            <input class ="strictToggle" type = "radio">On</input>
-        </label>
-            
-        </div>
-    </form>
-<div class = "number-of-stages">Steps: <span class = "steps"></span></div>
-    <div class = "simonButtons">
-    <button id = "red" class = "btn btn-lg gameButton red">
-        <audio id = "redSound"><source src = "audio/Red.wav"</audio></button>
-    <button id = "blue" class = "btn btn-lg gameButton blue">
-                <audio id = "blueSound"><source src = "audio/Blue.wav"</audio></button>
-        </button>
-    <button id = "green" class = "btn btn-lg gameButton green">
-                <audio id = "greenSound"><source src = "audio/Green.wav"</audio></button>
-            </button>
-    <button id = "yellow" class = "btn btn-lg gameButton yellow">
-                <audio id = "yellowSound"><source src = "audio/Yellow.wav"</audio></button>
-</button>
-<audio id = "whoops"><source src = "audio/Whoops.wav"</audio>
-<audio id = "gameOver"><source src = "audio/GameOver.wav"</audio>
-    </div>
-    <div class = "messageWindow"></div>
-<script src="js/index.js"></script>
+    <link rel="stylesheet" href="css/style.css"> </head>
 
+<body>
+    <div id="gameOverModal" class="modal fade" role="dialogue" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialogue" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title gameOverMessage" id="">GAME OVER!</h1> </div>
+                <div class="modal-body">
+                    <p>YOUR SCORE WAS <span class="steps">0</span>.</p>
+                    <p>YOUR HIGH SCORE IS <span class="highScore">0</span>.</p>
+                    <p>YOU HAVE NOT REACHED 20.</p>
+                    <p>PLAY AGAIN?</p>
+                    <p class="btn playAgain">[YES]</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="strictModeModal" class="modal fade" role="dialogue" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialogue" role="document">
+            <div class="modal-content">
+                <div class="modal-header"> </div>
+                <div class="modal-body">
+                    <p>WOULD YOU LIKE TO RESET THE GAME?</p>
+                    <p><span class="btn yesReset">[YES]</span> <span class="btn dontReset">[NO]</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="youWinModal" class="modal fade" role="dialogue" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialogue" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>YOU WIN!!</h1> </div>
+                <div class="modal-body">
+                    <p>WOULD YOU LIKE TO PLAY AGAIN?</p>
+                    <p><span class="btn playAgain">[YES]</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="resetModal" class="modal fade" role="dialogue" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialogue" role="document">
+            <div class="modal-content">
+                <div class="modal-header"> </div>
+                <div class="modal-body">
+                    <p>ARE YOU SURE?</p>
+                    <p><span class="btn playAgain">[YES]</span> <span class="btn dontReset">[NO]</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="info">
+        <div class="welcome">WELCOME TO SIMON!</div>
+        <div class="number-of-stages">STEPS: <span class="steps">0</span></div>
+        <div>LIVES: <span class="lives"></span></div>
+        <div>HIGH SCORE: <span class="highScore">0</span></div>
+        <div class="messageWindow">CAN YOU REACH 20?</div>
+    </div>
+    <div class="simonButtons">
+        <div class="first-row rows">
+            <div id="red" class="button gameButton red">
+                <audio id="redSound">
+                    <source src="audio/Red.wav" </audio> </div>
+        </div>
+        <div class="second-row rows">
+            <div id="blue" class="button gameButton blue">
+                <audio id="blueSound">
+                    <source src="audio/Blue.wav" </audio> </div>
+            <div id="green" class="button gameButton green">
+                <audio id="greenSound">
+                    <source src="audio/Green.wav" </audio> </div>
+        </div>
+        <div class="third-row rows">
+            <div id="yellow" class="button gameButton yellow">
+                <audio id="yellowSound">
+                    <source src="audio/Yellow.wav" </audio> </div>
+        </div>
+    </div>
+    <form class="strictSelector">
+        <label data-toggle="tooltip" data-placement="bottom" title="One mistake and it's Game Over!">STRICT MODE</label>
+        <div class="btn-group" data-toggle="buttons">
+            <label id="strictOff" class="strictToggle btn active">
+                <input class="" type="radio" checked>[OFF]</input>
+            </label>
+            <label id="strictOn" class="strictToggle btn inactive">
+                <input class="strictToggle" type="radio">[ON]</input>
+            </label>
+        </div>
+    </form> <span class="btn reset">[RESET]</span>
+    <audio id="whoops">
+        <source src="audio/Whoops.wav" </audio>
+        <audio id="gameOver">
+            <source src="audio/GameOver.wav" </audio>
+            <script src="js/index.js"></script>
 </body>
